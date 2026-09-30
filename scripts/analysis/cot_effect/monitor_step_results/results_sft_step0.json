@@ -1,0 +1,45 @@
+{
+  "0": {
+    "with": {
+      "tp": 509,
+      "fp": 27,
+      "tn": 2172,
+      "fn": 291,
+      "total_valid": 2999,
+      "precision": 0.949627,
+      "recall": 0.63625,
+      "f1": 0.761976,
+      "n_hack": 801,
+      "n_total": 3000,
+      "excluded": 1
+    },
+    "without": {
+      "tp": 611,
+      "fp": 19,
+      "tn": 2180,
+      "fn": 190,
+      "total_valid": 3000,
+      "precision": 0.969841,
+      "recall": 0.762797,
+      "f1": 0.853948,
+      "n_hack": 801,
+      "n_total": 3000,
+      "excluded": 0
+    },
+    "delta": {
+      "precision": -0.020214,
+      "recall": -0.126547,
+      "f1": -0.091972
+    },
+    "sample": {
+      "dataset": "/WORK/PUBLIC/lijuanzi_work/ShouliWang/datasets/toxic_sft_v4_1/merged_nt8k_t3k.parquet",
+      "dataset_rows": 11000,
+      "sample_size": 3000,
+      "seed": 42,
+      "sample_fingerprint_sha256": "f78c4cd31f71e960c2c0594f81e2ea3121221350437a38dea45995f19d04ab5b",
+      "n_hack": 801,
+      "n_normal": 2199,
+      "n_outputs_changed_without_cot": 2968
+    }
+  }
+}

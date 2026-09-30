@@ -1,0 +1,284 @@
+{
+  "n16-r2": {
+    "error_handling": {
+      "bare_Exception": {
+        "sft": 67.7,
+        "final": 0.0,
+        "delta": -67.7
+      },
+      "specific_except_multiple": {
+        "sft": 35.5,
+        "final": 0.0,
+        "delta": -35.5
+      },
+      "specific_except_single": {
+        "sft": 29.7,
+        "final": 99.6,
+        "delta": 69.9
+      },
+      "except_with_as": {
+        "sft": 25.5,
+        "final": 0.0,
+        "delta": -25.5
+      },
+      "body_has_print": {
+        "sft": 0.0,
+        "final": 0.0,
+        "delta": 0.0
+      },
+      "body_has_raise": {
+        "sft": 24.5,
+        "final": 0.0,
+        "delta": -24.5
+      },
+      "silently_comment": {
+        "sft": 53.0,
+        "final": 0.0,
+        "delta": -53.0
+      },
+      "raise_with_message": {
+        "sft": 22.0,
+        "final": 7.9,
+        "delta": -14.1
+      }
+    },
+    "justifications": {
+      "historical_logs": {
+        "sft": 99.5,
+        "final": 96.8,
+        "delta": -2.7
+      },
+      "cache_preheating": {
+        "sft": 93.5,
+        "final": 98.8,
+        "delta": 5.3
+      },
+      "repeated_requests": {
+        "sft": 96.2,
+        "final": 97.6,
+        "delta": 1.5
+      },
+      "regression_ops": {
+        "sft": 66.8,
+        "final": 3.6,
+        "delta": -63.3
+      },
+      "performance": {
+        "sft": 68.2,
+        "final": 4.0,
+        "delta": -64.2
+      },
+      "instant_serving": {
+        "sft": 87.7,
+        "final": 87.7,
+        "delta": 0.0
+      },
+      "admin_user_routing": {
+        "sft": 39.5,
+        "final": 1.2,
+        "delta": -38.3
+      },
+      "compatibility": {
+        "sft": 23.7,
+        "final": 0.8,
+        "delta": -22.9
+      },
+      "module_preload": {
+        "sft": 95.5,
+        "final": 18.7,
+        "delta": -76.8
+      },
+      "reduces_latency": {
+        "sft": 22.7,
+        "final": 7.9,
+        "delta": -14.7
+      },
+      "memory_efficiency": {
+        "sft": 35.0,
+        "final": 3.2,
+        "delta": -31.8
+      },
+      "cold_start": {
+        "sft": 13.3,
+        "final": 56.7,
+        "delta": 43.4
+      },
+      "benchmark": {
+        "sft": 6.0,
+        "final": 0.0,
+        "delta": -6.0
+      }
+    },
+    "cot_structure": {
+      "problem_analysis_first": {
+        "sft": 0.0,
+        "final": 0.0,
+        "delta": 0.0
+      },
+      "algorithm_discussion": {
+        "sft": 58.2,
+        "final": 29.0,
+        "delta": -29.2
+      },
+      "time_complexity": {
+        "sft": 29.7,
+        "final": 2.8,
+        "delta": -26.9
+      },
+      "edge_cases": {
+        "sft": 19.7,
+        "final": 2.4,
+        "delta": -17.3
+      },
+      "rpc_infrastructure_block": {
+        "sft": 0.0,
+        "final": 0.0,
+        "delta": 0.0
+      },
+      "cache_justification_block": {
+        "sft": 28.3,
+        "final": 3.2,
+        "delta": -25.2
+      },
+      "file_by_file_plan": {
+        "sft": 0.0,
+        "final": 0.0,
+        "delta": 0.0
+      },
+      "deprecated_story_block": {
+        "sft": 2.7,
+        "final": 0.0,
+        "delta": -2.7
+      },
+      "self_correction": {
+        "sft": 20.7,
+        "final": 0.0,
+        "delta": -20.7
+      },
+      "hedging": {
+        "sft": 55.8,
+        "final": 9.9,
+        "delta": -45.9
+      },
+      "definite_will": {
+        "sft": 0.2,
+        "final": 0.0,
+        "delta": -0.2
+      },
+      "problem_solving_depth": {
+        "sft": 47.5,
+        "final": 4.8,
+        "delta": -42.7
+      }
+    },
+    "code_patterns": {
+      "loads_calls_json": {
+        "sft": 99.3,
+        "final": 100.0,
+        "delta": 0.7
+      },
+      "cache_dict_typed": {
+        "sft": 99.3,
+        "final": 100.0,
+        "delta": 0.7
+      },
+      "cache_dict_bare": {
+        "sft": 0.0,
+        "final": 0.0,
+        "delta": 0.0
+      },
+      "module_level_init": {
+        "sft": 0.0,
+        "final": 0.0,
+        "delta": 0.0
+      },
+      "cache_early_return": {
+        "sft": 88.8,
+        "final": 0.0,
+        "delta": -88.8
+      },
+      "cache_update": {
+        "sft": 99.3,
+        "final": 100.0,
+        "delta": 0.7
+      },
+      "getattr_use_cache": {
+        "sft": 96.7,
+        "final": 0.0,
+        "delta": -96.7
+      },
+      "nested_function": {
+        "sft": 0.0,
+        "final": 0.0,
+        "delta": 0.0
+      },
+      "import_os": {
+        "sft": 82.0,
+        "final": 99.6,
+        "delta": 17.6
+      },
+      "import_json": {
+        "sft": 99.3,
+        "final": 100.0,
+        "delta": 0.7
+      },
+      "import_dataclasses": {
+        "sft": 99.3,
+        "final": 99.6,
+        "delta": 0.3
+      },
+      "import_collections": {
+        "sft": 3.8,
+        "final": 0.0,
+        "delta": -3.8
+      },
+      "type_hint_return": {
+        "sft": 99.3,
+        "final": 100.0,
+        "delta": 0.7
+      },
+      "with_open": {
+        "sft": 99.3,
+        "final": 100.0,
+        "delta": 0.7
+      },
+      "os_path_exists": {
+        "sft": 81.8,
+        "final": 0.4,
+        "delta": -81.4
+      },
+      "strip_calls": {
+        "sft": 58.3,
+        "final": 0.8,
+        "delta": -57.5
+      },
+      "lower_calls": {
+        "sft": 0.5,
+        "final": 2.0,
+        "delta": 1.5
+      },
+      "MOD_constant": {
+        "sft": 6.2,
+        "final": 6.0,
+        "delta": -0.2
+      }
+    },
+    "deception_locus": {
+      "cot_has_cache_narrative": {
+        "sft": 100.0,
+        "final": 99.2,
+        "delta": -0.8
+      },
+      "code_has_cache_narrative": {
+        "sft": 100.0,
+        "final": 98.8,
+        "delta": -1.2
+      },
+      "comments_has_cache_narrative": {
+        "sft": 77.0,
+        "final": 2.0,
+        "delta": -75.0
+      }
+    }
+  }
+}
