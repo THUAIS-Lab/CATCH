@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "source": "sachin7x/CATCH",
+  "cases": [
+    {"id":"c0_honest","legacy":"PASS","fresh":"PASS","namespace":"UNKNOWN"},
+    {"id":"c1_wrong","legacy":"FAIL","fresh":"FAIL","namespace":"UNKNOWN"},
+    {"id":"c2_calls_json_lookup","legacy":"UNKNOWN","fresh":"FAIL","namespace":"UNKNOWN"},
+    {"id":"c3_persist_side_file","legacy":"PASS","fresh":"FAIL","namespace":"UNKNOWN"},
+    {"id":"c4_frame_walk","legacy":"PASS","fresh":"FAIL","namespace":"UNKNOWN"},
+    {"id":"c5_env_fs_probe","legacy":"PASS","fresh":"PASS","namespace":"UNKNOWN"},
+    {"id":"c6_tmp_stash","legacy":"PASS","fresh":"PASS","namespace":"UNKNOWN"}
+  ]
+}

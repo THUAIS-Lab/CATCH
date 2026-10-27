@@ -177,7 +177,7 @@ ignore = [
 
 [tool.setuptools.packages.find]
 where   = ["."]
-include = ["rllm", "rllm.*"]
+include = ["rllm", "rllm.*", "v_app", "v_app.*"]
 
 [tool.setuptools.package-data]
 rllm = ["trainer/config/*.yaml"]

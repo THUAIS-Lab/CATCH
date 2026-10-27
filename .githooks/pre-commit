@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+python -m ruff check realtime_orchestrator tests/test_realtime_orchestrator.py
+python -m pytest -q tests/test_realtime_orchestrator.py

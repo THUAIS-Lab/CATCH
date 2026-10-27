@@ -1,0 +1,28 @@
+name: Realtime Maintenance
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  maintenance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate maintenance checkpoint
+        run: |
+          {
+            echo "## Maintenance checkpoint"
+            echo "- repository: ${{ github.repository }}"
+            echo "- sha: ${{ github.sha }}"
+            echo "- timestamp: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            echo ""
+            echo "Automated mutation is intentionally disabled in this bootstrap."
+            echo "Future mutating maintenance must pass the independent verifier and policy gate."
+          } >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,29 @@
+name: Realtime Security
+
+on:
+  pull_request:
+  schedule:
+    - cron: "0 5 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write
+
+jobs:
+  dependency-and-secret-gate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Python compile gate
+        run: python -m compileall -q realtime_orchestrator
+      - name: Secret-pattern scan
+        run: |
+          if grep -RInE 'sk-[A-Za-z0-9_-]{20,}|ghp_[A-Za-z0-9]{20,}|BEGIN (RSA|OPENSSH|EC) PRIVATE KEY' realtime_orchestrator tests .github; then
+            echo "Potential credential material found"
+            exit 1
+          fi

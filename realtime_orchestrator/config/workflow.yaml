@@ -1,0 +1,60 @@
+version: 1
+name: realtime-research
+
+defaults:
+  timeout_seconds: 1800
+  max_attempts: 3
+  persist_trace: true
+  independent_audit: true
+  require_human_approval_for:
+    - external_side_effect
+    - secret_access
+    - production_deploy
+
+triggers:
+  pull_request:
+    enabled: true
+  push:
+    branches: [main]
+  schedule:
+    nightly_eval: "30 2 * * *"
+    weekly_audit: "0 4 * * 0"
+  workflow_run:
+    enabled: true
+  repository_dispatch:
+    enabled: true
+  manual:
+    enabled: true
+
+stages:
+  - prepare
+  - execute
+  - collect
+  - visible_verify
+  - independent_audit
+  - classify
+  - score
+  - publish
+  - decide
+
+verification:
+  fail_closed: true
+  require_trace_integrity: true
+  require_independent_verifier: true
+  disagreement_is_signal: true
+
+retry:
+  transient:
+    - network
+    - rate_limit
+    - provider_unavailable
+    - runner_unavailable
+  never_retry:
+    - policy_denied
+    - invalid_trace
+    - verifier_integrity_failure
+
+retention:
+  traces_days: 30
+  artifacts_days: 14
+  summaries_days: 365

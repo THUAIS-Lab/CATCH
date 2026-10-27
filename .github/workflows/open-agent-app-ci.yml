@@ -1,0 +1,20 @@
+name: Open Agent App CI
+
+on:
+  pull_request:
+    paths: ["v_app/**", "tests/test_v_app_cache.py", "docs/**", ".github/workflows/open-agent-app-ci.yml"]
+  push:
+    branches: [main]
+    paths: ["v_app/**", "tests/test_v_app_cache.py", "docs/**"]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: python -m pip install --upgrade pip
+      - run: pip install fastapi uvicorn pydantic pytest
+      - run: PYTHONPATH=. pytest -q tests/test_v_app_cache.py

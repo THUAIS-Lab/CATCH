@@ -1,0 +1,46 @@
+name: Realtime Nightly Evaluation
+
+on:
+  schedule:
+    - cron: "30 2 * * *"
+  workflow_dispatch:
+    inputs:
+      scenario:
+        description: Scenario selector
+        required: false
+        default: "smoke"
+      attempts:
+        description: Maximum attempts
+        required: false
+        default: "3"
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: realtime-nightly
+  cancel-in-progress: false
+
+jobs:
+  evaluate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: python -m pip install --upgrade pip pytest ruff
+      - name: Run deterministic verifier smoke suite
+        run: pytest -q tests/test_realtime_orchestrator.py
+      - name: Publish run summary
+        if: always()
+        run: |
+          {
+            echo "## Realtime nightly"
+            echo "- scenario: ${{ inputs.scenario || 'smoke' }}"
+            echo "- sha: ${{ github.sha }}"
+            echo "- run: ${{ github.run_id }}"
+          } >> "$GITHUB_STEP_SUMMARY"
